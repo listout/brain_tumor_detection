@@ -9,5 +9,6 @@
 - data-science-types
 - python-scikit-learn
 - tensorflow
+- python-tensorflow
 - python-keras-preprocessin
 - python-keras-application
