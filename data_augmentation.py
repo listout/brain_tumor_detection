@@ -29,5 +29,3 @@ def data_augmentation(file_dir, num_samples, save_to):
             i += 1
             if i > num_samples:
                 break
-
-data_augmentation('dataset/yes/', 6, '/tmp/augemented_data/')
