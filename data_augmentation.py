@@ -1,7 +1,10 @@
 from os import listdir, makedirs
 
 import cv2 as cv
-from keras_preprocessing.image import ImageDataGenerator
+import tensorflow as tk
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+# from keras_preprocessing.image import ImageDataGenerator
 
 
 def data_augmentation(file_dir, num_samples, save_to):
@@ -26,3 +29,5 @@ def data_augmentation(file_dir, num_samples, save_to):
             i += 1
             if i > num_samples:
                 break
+
+data_augmentation('dataset/yes/', 6, '/tmp/augemented_data/')
