@@ -12,3 +12,4 @@
 - python-tensorflow
 - python-keras-preprocessin
 - python-keras-application
+- pyyaml h5py
