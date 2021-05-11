@@ -1,7 +1,6 @@
 from os import listdir, makedirs
 
 import cv2 as cv
-import tensorflow as tk
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # from keras_preprocessing.image import ImageDataGenerator
