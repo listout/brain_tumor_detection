@@ -1,13 +1,21 @@
 # Brain Tumor Detection
 
-## Data Augmentation
+A lot of things are to be done. Currently I have ~9secs per epochs, I'm suspicious of such low value.
 
-Since we have **Data Imbalance** i.e. we have 253 images with 155 belonging to "yes" class and 98 belonging to "no" class, we are using a *Data Augmentation*. We take a MRI image and perform various image enhancements such as rotate, mirror and flip to get more number of images
+- [ ] Check if we get better or worse time per epochs if the dataset is split manually
+- [ ] Modularize Code
+- [ ] Experiment with layers in the `cnn`
 
-The `ImageDataGenerator` will generate batches of tensor images data from real-time data augmentation. The data will be looped over.
+## Some results
 
-The function `data_augmentation` will take:
+### Data for 30 epochs
 
-- `file_dir`: the directory of the images
-- `num_samples`: number of augmented data that will be generated per original image
-- `save_to`: directory to save the augmented images to
+![](test_run1.png)
+
+### Data for 100 epochs
+
+![](test_run2.png)
+
+### Data for 200 epochs
+
+![](test_run3.png)
