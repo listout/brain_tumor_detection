@@ -7,5 +7,5 @@ A lot of things are to be done. Currently I have ~9secs per epochs, I'm suspicio
 - [ ] Experiment with layers in the `cnn`
 
 | ![](test_run1.png) | ![](test_run2.png) |
-|--------------------+--------------------|
+|--------------------|--------------------|
 | ![](test_run3.png) | ![](test_run4.png) |
