@@ -112,7 +112,7 @@ cnn.compile(
 train_steps_per_epoch = training_set.n // training_set.batch_size
 test_steps_per_epoch = test_set.n // test_set.batch_size
 
-epochs = 200
+epochs = 100
 
 checkpoint_path = "training_1/cp.ckpt"
 checkpoint_dir = os.path.dirname(checkpoint_path)
@@ -150,4 +150,4 @@ ax[1].legend(loc='upper right')
 
 
 figs.tight_layout()
-figs.savefig('test_run3.png', bbox_inches='tight')
+figs.savefig('test_run4.png', bbox_inches='tight')
