@@ -16,5 +16,10 @@ print('Training Dataset directory', training_dataset_directory)
 print('Testing Dataset directory', testing_dataset_directory)
 
 # copy the dataset to temporary directory
-copy_tree(dataset_source_directory, training_dataset_directory)
-copy_tree(dataset_source_directory, testing_dataset_directory)
+
+
+def copy_images():
+    print('Copying training set')
+    copy_tree(dataset_source_directory, training_dataset_directory)
+    print('Copying testing set')
+    copy_tree(dataset_source_directory, testing_dataset_directory)
