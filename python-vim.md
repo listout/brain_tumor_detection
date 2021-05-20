@@ -13,3 +13,4 @@
 - python-keras-preprocessin
 - python-keras-application
 - pyyaml h5py
+- python-scipy
