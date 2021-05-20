@@ -1,11 +1,24 @@
-import tensorflow as tf
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import sys
 from tensorflow.keras.applications.vgg16 import preprocess_input
-from copyfile import *
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import tensorflow as tf
+import tempfile
+import os
 
-# copy_images()
+# check if images are copied to temp directory
+temp_dataset_dir = tempfile.gettempdir() + '/dataset'
+if not os.path.isdir(temp_dataset_dir):
+    print('Running test before the actual code')
+    print('Run the actual code, it will copy the dataset')
+    sys.exit()
 
-model = tf.keras.models.load_model('model/my_model.h5')
+# training and testing temporary directory
+training_dataset_directory = temp_dataset_dir + '/training/'
+testing_dataset_directory = temp_dataset_dir + '/testing/'
+print('Training Dataset directory', training_dataset_directory)
+print('Testing Dataset directory', testing_dataset_directory)
+
+model = tf.keras.models.load_model('model/vgg_model.h5')
 
 print(model.summary())
 
