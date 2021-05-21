@@ -23,3 +23,7 @@ def copy_images():
     copy_tree(dataset_source_directory, training_dataset_directory)
     print('Copying testing set')
     copy_tree(dataset_source_directory, testing_dataset_directory)
+
+
+if __name__ == "__main__":
+    copy_images()

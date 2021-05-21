@@ -6,9 +6,6 @@ from tensorflow.keras.optimizers import RMSprop
 from copyfile import *
 from matplotlib import pyplot as plt
 
-# copy dataset to temporary location
-# copy_images()
-
 # data augmentation
 train_datagen = ImageDataGenerator(
     rescale=1. / 255,
