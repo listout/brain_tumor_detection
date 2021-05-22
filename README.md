@@ -2,12 +2,14 @@
 
 - [x] VGG16
 - [ ] CNN
-- [ ] ResNet50
+- [x] ResNet50
 - [x] make the temporary direct platform independent
 
 # Results
 
 ![VGG16](graphs/vgg_run.png)
+
+![ResNet50](graphs/resnet_run.png)
 
 ## Dataset and Pretrained models
 
