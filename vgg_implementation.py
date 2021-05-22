@@ -48,8 +48,8 @@ vgg16 = VGG16(
 # main sequential model
 model = Sequential()
 model.add(vgg16)
-model.add(Dropout(0.3))
 model.add(Flatten())
+model.add(Dense(256, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
