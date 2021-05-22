@@ -58,7 +58,7 @@ model.layers[0].trainable = False
 
 model.compile(
     loss='binary_crossentropy',
-    optimizer=RMSprop(learning_rate=1e-4),
+    optimizer='Adam',
     metrics=['accuracy']
 )
 
