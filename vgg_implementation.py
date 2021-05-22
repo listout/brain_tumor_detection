@@ -39,35 +39,35 @@ testing_set = train_datagen.flow_from_directory(
 
 # base model for transfer learning
 # pretrained vgg16 model
-base_model = VGG16(
+vgg16 = VGG16(
     weights='imagenet',
     include_top=False,
     input_shape=img_shape
 )
 
 # main sequential model
-vgg_model = Sequential()
-vgg_model.add(base_model)
-vgg_model.add(Dropout(0.3))
-vgg_model.add(Flatten())
-vgg_model.add(Dropout(0.5))
-vgg_model.add(Dense(1, activation='sigmoid'))
+model = Sequential()
+model.add(vgg16)
+model.add(Dropout(0.3))
+model.add(Flatten())
+model.add(Dropout(0.5))
+model.add(Dense(1, activation='sigmoid'))
 
 # don't train the model
-vgg_model.layers[0].trainable = False
+model.layers[0].trainable = False
 
-vgg_model.compile(
+model.compile(
     loss='binary_crossentropy',
     optimizer=RMSprop(learning_rate=1e-4),
     metrics=['accuracy']
 )
 
 # generate model summary
-vgg_model.summary()
+model.summary()
 
 # training
 epochs = 120
-vgg_history = vgg_model.fit(
+vgg_history = model.fit(
     training_set,
     epochs=epochs,
     validation_data=testing_set
