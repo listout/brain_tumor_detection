@@ -18,18 +18,14 @@ train_datagen = ImageDataGenerator(
 )
 
 # vgg16 specific settings
-img_size = (224, 224)
+img_size = (150, 150)
 img_shape = img_size + (3,)
-random_seed = 123
 
 # training set
 training_set = train_datagen.flow_from_directory(
     training_dataset_directory,
-    color_mode='rgb',
     target_size=img_size,
-    batch_size=32,
     class_mode='binary',
-    seed=random_seed,
     subset='training'
 )
 
@@ -37,9 +33,7 @@ training_set = train_datagen.flow_from_directory(
 testing_set = train_datagen.flow_from_directory(
     testing_dataset_directory,
     target_size=img_size,
-    batch_size=16,
     class_mode='binary',
-    seed=random_seed,
     subset='validation'
 )
 
