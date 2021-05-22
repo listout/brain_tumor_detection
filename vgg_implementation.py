@@ -2,7 +2,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dropout, Dense
-from tensorflow.keras.optimizers import RMSprop
 from copyfile import *
 from matplotlib import pyplot as plt
 
