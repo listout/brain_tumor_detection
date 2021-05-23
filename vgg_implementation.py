@@ -65,7 +65,7 @@ model.compile(
 model.summary()
 
 # training
-epochs = 120
+epochs = 30
 vgg_history = model.fit(
     training_set,
     epochs=epochs,
@@ -97,4 +97,4 @@ vgg_history = model.fit(
 # ax[1].set_xlabel('epoch')
 
 # plt.tight_layout()
-# plt.savefig('/content/drive/MyDrive/model/vgg_run1.png', bbox_inches='tight')
+# plt.savefig('/path/to/save/png', bbox_inches='tight')
