@@ -1,5 +1,5 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
+from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dropout, Dense
 from copyfile import *
@@ -16,7 +16,7 @@ train_datagen = ImageDataGenerator(
     validation_split=0.2
 )
 
-# vgg16 specific settings
+# resnet specific settings
 img_size = (150, 150)
 img_shape = img_size + (3,)
 
@@ -36,9 +36,8 @@ testing_set = train_datagen.flow_from_directory(
     subset='validation'
 )
 
-# base model for transfer learning
-# pretrained vgg16 model
-vgg16 = VGG16(
+# base resnet model
+resnet = ResNet50(
     weights='imagenet',
     include_top=False,
     input_shape=img_shape
@@ -46,13 +45,13 @@ vgg16 = VGG16(
 
 # main sequential model
 model = Sequential()
-model.add(vgg16)
+model.add(resnet)
 model.add(Flatten())
 model.add(Dense(256, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(1, activation='sigmoid'))
 
-# don't train the model
+# don't train the resent model
 model.layers[0].trainable = False
 
 model.compile(
@@ -64,9 +63,9 @@ model.compile(
 # generate model summary
 model.summary()
 
-# training
-epochs = 120
-vgg_history = model.fit(
+# training the trainable paramerters
+epochs = 30
+resnet_hist = model.fit(
     training_set,
     epochs=epochs,
     validation_data=testing_set
@@ -76,10 +75,10 @@ vgg_history = model.fit(
 # model.save('/path/to/model/folder')
 
 # metrics
-# acc = vgg_history.history['accuracy']
-# val_acc = vgg_history.history['val_accuracy']
-# loss = vgg_history.history['loss']
-# val_loss = vgg_history.history['val_loss']
+# acc = resnet_hist.history['accuracy']
+# val_acc = resnet_hist.history['val_accuracy']
+# loss = resnet_hist.history['loss']
+# val_loss = resnet_hist.history['val_loss']
 
 # result plotting
 # figs, ax = plt.subplots(2, sharex=True)
@@ -97,4 +96,4 @@ vgg_history = model.fit(
 # ax[1].set_xlabel('epoch')
 
 # plt.tight_layout()
-# plt.savefig('/content/drive/MyDrive/model/vgg_run1.png', bbox_inches='tight')
+# plt.savefig('/path/to/save/.png', bbox_inches='tight')
