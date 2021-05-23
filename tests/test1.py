@@ -18,7 +18,7 @@ testing_dataset_directory = temp_dataset_dir + '/testing/'
 print('Training Dataset directory', training_dataset_directory)
 print('Testing Dataset directory', testing_dataset_directory)
 
-model = tf.keras.models.load_model('model/vgg_model.h5')
+model = tf.keras.models.load_model('model/vgg_imp.h5')
 
 print(model.summary())
 
